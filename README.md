@@ -1,6 +1,5 @@
-# Stock-market-price-prediction-website
-STOCK MARKET PRICE PREDICTION WEBSITE
-# 📈 AI-Powered Stock Market Price Prediction Web Application
+
+# 📈 Stock Market Price Prediction Web Application
 
 🔗 Live Demo:  
 https://riyaswaroop1823.github.io/Stock-market-price-prediction-website/
@@ -50,4 +49,13 @@ https://riyaswaroop1823.github.io/Stock-market-price-prediction-website/
 
 ---
 
-## 📂 Project Structure
+
+---
+
+## 🔮 Future Enhancements
+
+- Integration with Machine Learning model (LSTM)
+- Real-time stock data integration using APIs
+- Backend integration using Python (Flask)
+- Prediction visualization using charts
+
