@@ -3,7 +3,6 @@
 
 🔗 Live Demo:  
 https://riyaswaroop1823.github.io/Stock-market-price-prediction-website/
-
 🔗 GitHub Repository:  
 https://github.com/Riyaswaroop1823/Stock-market-price-prediction-website
 
