@@ -74,6 +74,19 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+<script src="js/main.js"></script>
+
+<script>
+async function getPrediction() {
+    const response = await fetch("http://127.0.0.1:5000/predict/AAPL");
+    const data = await response.json();
+
+    alert(
+        "Prediction: " + data.prediction +
+        "\nConfidence: " + data.confidence
+    );
+}
+</script>
+
 </body>
 </html>
