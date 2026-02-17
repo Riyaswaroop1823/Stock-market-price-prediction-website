@@ -94,7 +94,42 @@
         </div>
     </footer>
 
-    <script src="js/chart.js"></script>
-    <script src="js/predictions.js"></script>
+    <script>
+function searchStock() {
+
+    const symbol = document.getElementById("stockSearch").value || "AAPL";
+
+    fetch("https://stockaibackend.onrender.com/predict/" + symbol)
+        .then(response => response.json())
+        .then(data => {
+
+            document.querySelector(".current-price .value").innerText =
+                "$" + data.current_price.toFixed(2);
+
+            document.querySelectorAll(".prediction-value")[0].innerText =
+                "$" + data.prediction_24h.toFixed(2);
+
+            document.querySelectorAll(".prediction-value")[1].innerText =
+                "$" + data.prediction_7d.toFixed(2);
+
+            document.querySelectorAll(".prediction-value")[2].innerText =
+                "$" + data.prediction_30d.toFixed(2);
+
+            document.querySelectorAll(".confidence")[0].innerText =
+                "Confidence: " + data.confidence_24h + "%";
+
+            document.querySelectorAll(".confidence")[1].innerText =
+                "Confidence: " + data.confidence_7d + "%";
+
+            document.querySelectorAll(".confidence")[2].innerText =
+                "Confidence: " + data.confidence_30d + "%";
+
+        })
+        .catch(error => {
+            alert("Backend connection error");
+            console.log(error);
+        });
+}
+</script>
 </body>
 </html>
