@@ -22,7 +22,7 @@
             
             <div class="search-box">
                 <input type="text" id="stockSearch" placeholder="Enter stock symbol (e.g., AAPL)">
-                <button class="btn" onclick="searchStock()">Predict</button>
+                <button class="btn" onclick="getPrediction()">Predict</button>
             </div>
 
             <div class="prediction-result" id="predictionResult">
@@ -96,7 +96,7 @@
 
 
 <script>
-function searchStock() {
+function getPrediction() {
 
     const symbol = document.getElementById("stockSearch").value || "AAPL";
 
@@ -104,26 +104,17 @@ function searchStock() {
         .then(response => response.json())
         .then(data => {
 
-            document.querySelector(".current-price .value").innerText =
+            document.getElementById("currentPrice").innerText =
                 "$" + data.current_price.toFixed(2);
 
-            document.querySelectorAll(".prediction-value")[0].innerText =
+            document.getElementById("prediction24h").innerText =
                 "$" + data.prediction_24h.toFixed(2);
 
-            document.querySelectorAll(".prediction-value")[1].innerText =
+            document.getElementById("prediction7d").innerText =
                 "$" + data.prediction_7d.toFixed(2);
 
-            document.querySelectorAll(".prediction-value")[2].innerText =
+            document.getElementById("prediction30d").innerText =
                 "$" + data.prediction_30d.toFixed(2);
-
-            document.querySelectorAll(".confidence")[0].innerText =
-                "Confidence: " + data.confidence_24h + "%";
-
-            document.querySelectorAll(".confidence")[1].innerText =
-                "Confidence: " + data.confidence_7d + "%";
-
-            document.querySelectorAll(".confidence")[2].innerText =
-                "Confidence: " + data.confidence_30d + "%";
 
         })
         .catch(error => {
